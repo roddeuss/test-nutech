@@ -15,12 +15,13 @@ var storage = multer.diskStorage({
 });
 
 var fileFilter = function (req, file, cb) {
-    if (file.mimetype === 'image/png' || file.mimetype === 'image/jpg') {
+    if (file.mimetype === 'image/png' || file.mimetype === 'image/jpg' || file.mimetype === 'image/jpeg') {
         cb(null, true);
     } else {
-        cb(new Error('Only PNG and JPG images are allowed.'));
+        cb(new Error('Only PNG, JPG, and JPEG images are allowed.'));
     }
 };
+
 
 var upload = multer({
     storage: storage,
