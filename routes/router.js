@@ -18,7 +18,7 @@ var fileFilter = function (req, file, cb) {
     if (file.mimetype === 'image/png' || file.mimetype === 'image/jpg') {
         cb(null, true);
     } else {
-        cb(new Error('Only PNG and jpg images are allowed.'));
+        cb(new Error('Only PNG and JPG images are allowed.'));
     }
 };
 
